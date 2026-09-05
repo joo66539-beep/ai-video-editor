@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ai-video-editor-backend
+    env: docker
+    region: oregon
+    plan: free
+    repo: https://github.com/joo66539-beep/ai-video-editor
+    branch: main
+    buildCommand: "docker build -t ai-video-editor-backend ."
+    startCommand: "docker run -p 8000:8000 ai-video-editor-backend"
+    dockerfilePath: backend/Dockerfile
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: MAX_UPLOAD_MB
+        value: "200"
