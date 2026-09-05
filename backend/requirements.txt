@@ -1,0 +1,6 @@
+# Backend requirements
+fastapi
+uvicorn[standard]
+python-multipart
+requests
+pydantic
